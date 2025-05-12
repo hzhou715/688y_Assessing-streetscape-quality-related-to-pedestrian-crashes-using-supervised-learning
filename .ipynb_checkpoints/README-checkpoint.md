@@ -1,4 +1,3 @@
-# 688y_Assessing-streetscape-quality-related-to-pedestrian-crashes-using-supervised-learning
 # Assessing Streetscape Quality Related to Pedestrian Crashes Using Supervised Learning
 
 **Course:** URSP688Y
@@ -56,7 +55,8 @@ The analytical process includes the following key steps:
 
 - **Average Precision (AuPRC):** 0.687  
 - **Precision:** 68.5%  
-- **Recall:** 67.4%  
+- **Recall:** 67.4%
+- **Confidence threshold:** 0.5
 
 ### Per-Label precision scores
 
@@ -104,7 +104,7 @@ The project is organized into three primary stages: downloading street view imag
 │   ├── train_dataset_sample/               # Folder of training images (pseudo-labeled)  
 │   └── test_dataset_sample/                # Folder of test images (ground truth)  
 │
-├── detailed_method_explanation.ipynb       # Main notebook explaining project methodology  
+├── method_explanation.ipynb                # Main notebook explaining project methodology  
 ├── Narrative.pdf                           # Final narrative report for the project  
 └── README.md                               # Finalized project README  
 ```
