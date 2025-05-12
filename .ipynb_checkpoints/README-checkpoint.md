@@ -82,8 +82,16 @@ The analytical process includes the following key steps:
 The model performs well in identifying visible features (e.g., sidewalks, crosswalks), but shows lower performance for subjective conditions (e.g., road pavement quality). These findings support the potential of automated image analysis for infrastructure screening while highlighting the need for human oversight in complex or subjective assessments.
 
 ---
+## 4. Theoretical strengths and weeknesses
 
-## 4. Project structure and file descriptions
+This study demonstrates the strengths of using AI for scalable, objective assessment of streetscape quality. By using street view imagery and Auto Machine Learning, public agencies can efficiently identify infrastructure disparities, such as missing sidewalks or absent crosswalks. In this way, data science offers a method to detect and prioritize low-quality environments that may affect underserved communities. This aligns with the goals of environment justice, where the quality of the built environment should not determine one’s risk exposure.
+
+However, limitations arise from both the models and data. The model performs well in detecting visible infrastructure but struggles with subjective assessments such as pavement or sidewalk condition. It cannot capture condition-based inequities. Moreover, the dataset is biased. Street view images coverage is more frequent in downtown, while underserved neighborhoods or rural areas may have outdated or no images. The places most in need of investment may be least represented in the training data.
+
+In summary, while AI enables large scale audits of streetscape quality, it lacks human insight and sufficient representation of vulnerable areas. Future work should integrate community cooperation and diverse datasets to ensure smart city tools improve rather than undermine urban equity.
+
+
+## 5. Project structure and file descriptions
 
 The project is organized into three primary stages: downloading street view images, labeling, and training the model. Each stage is organized in its own folder, along with supporting code and datasets.
 
@@ -96,22 +104,18 @@ The project is organized into three primary stages: downloading street view imag
 │   └── download_gsv.py                     # Code to download images using Google Street View API  
 │
 ├── 2_label_street_view/                    # Labeling process (ChatGPT-based and manual)  
-│   ├── chatgpt_label.py                    # Script to auto-label images using ChatGPT  
-│   ├── train_labels_chatgpt41.csv          # Pseudo-labels generated for training  
-│   └── test_labels_ground_truth.csv        # Manually labeled ground truth for test  
+│   └── chatgpt_label.py                    # Script to auto-label images using ChatGPT  
 │
 ├── 3_train_model/                          # Image data prepared for training in Vertex AI  
-│   ├── train_dataset_sample/               # Folder of training images (pseudo-labeled)  
-│   └── test_dataset_sample/                # Folder of test images (ground truth)  
+│   ├── train_dataset_sample/               # Folder of training images (pseudo-labeled) 
+│   ├── test_dataset_sample/                # Folder of test images (ground truth)  
+│   ├── train_labels_chatgpt41.csv          # Pseudo-labels generated for training  
+│   └── test_labels_ground_truth.csv        # Manually labeled ground truth for test  
 │
 ├── method_explanation.ipynb                # Main notebook explaining project methodology  
 ├── Narrative.pdf                           # Final narrative report for the project  
 └── README.md                               # Finalized project README  
 ```
 
-
-## 5. Contact
-
-For any questions regarding this project, please contact Huan Zhou at [hzhou715@umd.edu](mailto:hzhou715@umd.edu).
 
 
